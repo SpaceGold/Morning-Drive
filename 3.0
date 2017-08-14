@@ -1,0 +1,21 @@
+// Morning Drive
+// By Adam Zimmerman (July 2017)
+
+//In my first Swift app, you simply run the app to get advice on which car to choose for the day's conditions.
+//This served as a simple refresher for some of the basic concepts I learned in Python in college.
+
+//Importing Foundation for RNG
+import Foundation
+
+// I'd like to do for i in weather, appropriate cars
+var cars = ["good":"the Viper", "fair":"McLaren", "overcast":"Model S", "rainy":"GTR", "sunny":"Lambo", "clear":"'Vette", "foggy":"racing truck", "sandy":"Baja bug", "icy":"Model X", "apocalyptic":"dragon"] 
+
+// Forcing NSDate flop into int; constraining to n, dict count
+var RNG = Int(NSDate().timeIntervalSince1970)%(cars.count)  
+
+// Weather fact basis
+var weather = Array(cars.keys)[RNG] // Added .keys to print just key, not ("key","value")
+var car = Array(cars.values)[RNG]
+
+// Output
+print("The weather is \(weather) today. May I recommend the \(car).")
